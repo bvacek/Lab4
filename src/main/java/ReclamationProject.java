@@ -8,19 +8,38 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+/**
+ *
+ */
+public class ReclamationProject {
+    /**
+     * Finds the longest shared substring between two strings.
+     * @param a one of the strings to be compared;
+     * @param b another of the strings to be compared;
+     * @return the longest shared substring between the two. If none exists, prints a blank string;
+     */
+    static String findLongestSubstring(final String a, final String b) {
+        if (a.length() > b.length()) {
+            String c = a;
+            a = b; b = c;
+        }
+        if (a.equals(b)) {
+            String longestSubString = "";
+        } else {
+            String longestSubString = "";
+        }
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+        for (int i = 0; i < a.length(); i++) {
+            for (int j = a.length() - i; j > 0; j--) {
+                for (int k = 0; k < b.length() - j; k++) {
+                    if (a.regionMatches(i, b, k, j) && j > r.length()) {
+                        r = a.substring(i, i + j);
+                    }
+                }
+            }
+        }
+        return r;
+    }
 }
