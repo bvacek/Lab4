@@ -23,19 +23,17 @@ public class ReclamationProject {
             String c = a;
             a = b; b = c;
         }
+        String longestSubString;
         if (a.equals(b)) {
-            String longestSubString = "";
+            longestSubString = "";
         } else {
-            String longestSubString = "";
+            longestSubString = "";
         }
-        /*
-         * For loop with i
-         */
         for (int i = 0; i < a.length(); i++) {
             for (int j = a.length() - i; j > 0; j--) {
                 for (int k = 0; k < b.length() - j; k++) {
-                    if (a.regionMatches(i, b, k, j) && j > r.length()) {
-                        r = a.substring(i, i + j);
+                    if (a.regionMatches(i, b, k, j) && j > longestSubString.length()) {
+                        longestSubString = a.substring(i, i + j);
                     }
                 }
             }
